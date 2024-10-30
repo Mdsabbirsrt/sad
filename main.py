@@ -117,7 +117,6 @@ application.add_handler(CommandHandler('chk', chk))
 
 # Running the bot
 application.run_polling()
-"  # Replace with your bot token
 STRIPE_SK = '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'
 
 application = ApplicationBuilder().token(BOT_TOKEN).build()
