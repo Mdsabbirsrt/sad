@@ -2,15 +2,13 @@ import requests
 import json
 import random
 import string
-#from telegram import Update, ParseMode
-#from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters
+from telegram import Update, ParseMode
+from telegram.ext import ApplicationBuilder, CommandHandler, CallbackContext, MessageHandler, Filters
 
 BOT_TOKEN = "7819656172:AAFo9XjkRk6LXfVHArkeMn_4uLIzyqzHp10"  # Replace with your bot token
 STRIPE_SK = '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'
 
-updater = Updater(token=BOT_TOKEN, use_context=True)
-dispatcher = updater.dispatcher
-
+application = ApplicationBuilder().token(BOT_TOKEN).build()
 
 def get_str(string, start, end):
     try:
@@ -112,9 +110,9 @@ def chk(update: Update, context: CallbackContext):
 
 
 # Adding Handlers
-dispatcher.add_handler(CommandHandler('start', start))
-dispatcher.add_handler(CommandHandler('cmds', cmds))
-dispatcher.add_handler(CommandHandler('chk', chk))
+application.add_handler(CommandHandler('start', start))
+application.add_handler(CommandHandler('cmds', cmds))
+application.add_handler(CommandHandler('chk', chk))
 
 # Running the bot
-updater.start_polling()
+application.run_polling()
