@@ -2,7 +2,7 @@ import requests
 import json
 import random
 import string
-from telegram import Update, ParseMode
+#from telegram import Update, ParseMode
 from telegram.ext import Updater, CommandHandler, CallbackContext, MessageHandler, Filters
 
 BOT_TOKEN = "7819656172:AAFo9XjkRk6LXfVHArkeMn_4uLIzyqzHp10"  # Replace with your bot token
